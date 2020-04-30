@@ -2,6 +2,7 @@ package com.myapplicationdev.android.demolistview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -44,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, selectedFood.getName()
                                 + " Star: " + selectedFood.isStar(),
                         Toast.LENGTH_LONG).show();
+
+                String info = selectedFood.getName() + " Star: " + selectedFood.isStar();
+
+                Intent i = new Intent(MainActivity.this, SecondActivity.class);
+                i.putExtra("info", info);
+                startActivity(i);
+
             }
         });
 
